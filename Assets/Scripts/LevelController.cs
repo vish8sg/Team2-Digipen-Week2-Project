@@ -34,7 +34,7 @@ public class LevelController : MonoBehaviour
         Camera cam = Camera.main;
 
         // Step 1: Pick a side randomly (0=left, 1=right, 2=top, 3=bottom)
-        int side = UnityEngine.Random.Range(0, 4);
+        int side = UnityEngine.Random.Range(0, 2);
 
         // Step 2: Get screen dimensions
         float screenX = 0f;
