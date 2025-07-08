@@ -20,6 +20,9 @@ public class CircularMotion : MonoBehaviour
     {
         if (center == null) { return; }
         radius = Vector3.Distance(center.position, transform.position);
+        angle = Vector3.Angle(center.position, transform.position);
+        angle = Mathf.Deg2Rad * angle;
+        Debug.Log(angle);
     }
 
     private void Update()
@@ -27,6 +30,7 @@ public class CircularMotion : MonoBehaviour
         HandleInput();
 
         angle += angularSpeed * Time.deltaTime;
+
 
         //Calculate new positon on circle
         Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
