@@ -46,9 +46,12 @@ public class CircularMotion : MonoBehaviour
         } else if (Input.GetKey(KeyCode.LeftArrow))
         {
             angularSpeed += angularAcceleration * Time.deltaTime;
-        } 
+        } else
+        {
+            angularSpeed = Mathf.MoveTowards(angularSpeed, 0f, angularAcceleration *  Time.deltaTime);
+        }
 
-        angularSpeed = Mathf.Clamp(angularSpeed, -maxAngularSpeed, maxAngularSpeed);
+            angularSpeed = Mathf.Clamp(angularSpeed, -maxAngularSpeed, maxAngularSpeed);
     }
 
 }
