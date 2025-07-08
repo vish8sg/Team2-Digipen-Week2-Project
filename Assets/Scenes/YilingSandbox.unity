@@ -477,7 +477,7 @@ GameObject:
   - component: {fileID: 670738065}
   - component: {fileID: 670738066}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Paddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,8 +544,8 @@ Transform:
   m_GameObject: {fileID: 670738062}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 2.18, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.3, z: 1}
+  m_LocalPosition: {x: 0.03, y: 1.31, z: 0}
+  m_LocalScale: {x: 1.38, y: 0.17, z: 0.76}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -563,8 +563,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {fileID: 1176606149}
-  angularAcceleration: 10
-  maxAngularSpeed: 3.5
+  angularAcceleration: 30
+  maxAngularSpeed: 5
 --- !u!143 &670738066
 CharacterController:
   m_ObjectHideFlags: 0
@@ -622,7 +622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   badProjectile: {fileID: 4672845351051639279, guid: 627657e03e742e24dbf8b1cd537fd7e9, type: 3}
-  launchForce: 10
+  launchForce: 7
 --- !u!4 &1114555885
 Transform:
   m_ObjectHideFlags: 0
