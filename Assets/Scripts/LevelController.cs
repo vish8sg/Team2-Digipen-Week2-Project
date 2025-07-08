@@ -22,10 +22,11 @@ public class LevelController : MonoBehaviour
     {
         if (badProjectile == null) { return; }
         
-        Instantiate(badProjectile, GetRandomScreenEdgePosition(), Quaternion.identity);
+        GameObject projectile = Instantiate(badProjectile, GetRandomScreenEdgePosition(), Quaternion.identity);
 
-        Vector3 dirToOrigin = -badProjectile.transform.position.normalized;
-        badProjectile.GetComponent<Rigidbody2D>().AddForce(dirToOrigin * 100f);
+        Vector2 dirToOrigin = (Vector2) (-projectile.transform.position.normalized);
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        rb.AddForce(dirToOrigin * launchForce, ForceMode2D.Impulse);
     }
 
     Vector3 GetRandomScreenEdgePosition()
