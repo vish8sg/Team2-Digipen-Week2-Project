@@ -19,9 +19,6 @@ public class CircularMotion : MonoBehaviour
     {
         if (center == null) { return; }
         radius = Vector3.Distance(center.position, transform.position);
-        angle = Vector3.Angle(center.position, transform.position);
-        angle = Mathf.Deg2Rad * angle;
-        Debug.Log(angle);
     }
 
     private void Update()
@@ -55,6 +52,12 @@ public class CircularMotion : MonoBehaviour
         }
 
             angularSpeed = Mathf.Clamp(angularSpeed, -maxAngularSpeed, maxAngularSpeed);
+    }
+
+    private void MouseInput()
+    {
+        float angleToMouse;
+        Vector3 mousePos = Input.mousePosition;
     }
 
 }
