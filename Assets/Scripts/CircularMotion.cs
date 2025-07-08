@@ -7,7 +7,6 @@ public class CircularMotion : MonoBehaviour
 {
 
     [SerializeField] Transform center = null;
-    [SerializeField] float speed = 10f;
     [SerializeField] float angularAcceleration = 10f;
     [SerializeField] float maxAngularSpeed = 50f;
 
