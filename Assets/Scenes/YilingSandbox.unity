@@ -521,16 +521,55 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bitsy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4580472677731159037, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6546074666127991043, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 522407739}
   m_SourcePrefab: {fileID: 100100000, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
 --- !u!1 &522407733 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6546074666127991043, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
   m_PrefabInstance: {fileID: 522407732}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &522407739
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522407733}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.98
 --- !u!1 &677579693
 GameObject:
   m_ObjectHideFlags: 0
@@ -839,9 +878,21 @@ PrefabInstance:
       propertyPath: center
       value: 
       objectReference: {fileID: 1176606149}
-    - target: {fileID: 4962940560462295874, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
-      propertyPath: toggleMouseInput
-      value: 1
+    - target: {fileID: 5015583873759755838, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
+      propertyPath: m_Size.x
+      value: 7.5796003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015583873759755838, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
+      propertyPath: m_Size.y
+      value: 2.1367579
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015583873759755838, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07310724
+      objectReference: {fileID: 0}
+    - target: {fileID: 5015583873759755838, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.28418845
       objectReference: {fileID: 0}
     - target: {fileID: 6516451684346746884, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
       propertyPath: m_LocalPosition.x
