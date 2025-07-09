@@ -5,11 +5,12 @@ using UnityEngine;
 public class Bitsy : MonoBehaviour
 {
     [SerializeField] GameObject lifeKeeper = null;
+    [SerializeField] GameObject sceneLoader = null;
 
     HealthComponent healthComponent = null;
     void Start()
     {
-        if (lifeKeeper == null) { return; }
+        if (lifeKeeper == null || sceneLoader == null) { return; }
         healthComponent = GetComponent<HealthComponent>();
         lifeKeeper.GetComponent<LifeKeeper>().updateLife(healthComponent.GetLives());
     } 
@@ -19,6 +20,12 @@ public class Bitsy : MonoBehaviour
         {
             GetComponent<HealthComponent>().decreaseHealth();
             lifeKeeper.GetComponent<LifeKeeper>().updateLife(healthComponent.GetLives());
+
+            //restarts game if bitsy's lives goes to zero
+            if (healthComponent.GetLives() <=0 )
+            {
+                sceneLoader.GetComponent<SceneLoader>().LoadScene(0);
+            }
         }
     }
 }
