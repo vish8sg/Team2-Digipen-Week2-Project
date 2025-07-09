@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     {
         WaitForSeconds wait = new WaitForSeconds(spawnRate);
 
-        while (true)
+        while (canSpawn)
         {
             yield return wait;
 

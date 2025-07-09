@@ -9,6 +9,7 @@ public class Bitsy : MonoBehaviour
     HealthComponent healthComponent = null;
     void Start()
     {
+        if (lifeKeeper == null) { return; }
         healthComponent = GetComponent<HealthComponent>();
         lifeKeeper.GetComponent<LifeKeeper>().updateLife(healthComponent.GetLives());
     } 
