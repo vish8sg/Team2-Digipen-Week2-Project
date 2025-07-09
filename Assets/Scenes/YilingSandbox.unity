@@ -682,7 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 1176606149}
     - target: {fileID: 4962940560462295874, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
       propertyPath: toggleMouseInput
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6516451684346746884, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
       propertyPath: m_LocalPosition.x
