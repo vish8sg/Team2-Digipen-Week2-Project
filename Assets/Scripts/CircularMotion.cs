@@ -26,7 +26,10 @@ public class CircularMotion : MonoBehaviour
 
     private void Update()
     {
-        if (toggleMouseInput) { HandleInput(); }
+        if (toggleMouseInput) 
+        { 
+            HandleInput(); 
+        }
         else
         {
             HandleMouseInput();
