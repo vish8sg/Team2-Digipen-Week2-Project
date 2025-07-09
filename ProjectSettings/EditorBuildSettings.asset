@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/VishnuSandbox.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/YilingStartScreen.unity
+    guid: 8700ac1961f534ba4a4457e43a7fbc92
+  - enabled: 1
+    path: Assets/Scenes/YilingSandbox.unity
+    guid: 80a95eb992a4d42d588b2104b70245cc
   m_configObjects: {}
