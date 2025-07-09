@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CircularMotion : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CircularMotion : MonoBehaviour
 
     float angularSpeed = 0f;
     float angle = 0f;
+    float desiredAngle = 0f;
 
     private void Start()
     {
@@ -23,9 +25,10 @@ public class CircularMotion : MonoBehaviour
 
     private void Update()
     {
-        HandleInput();
+        //HandleInput();
+        HandleMouseInput();
 
-        angle += angularSpeed * Time.deltaTime;
+        //angle += angularSpeed * Time.deltaTime;
 
 
         //Calculate new positon on circle
@@ -54,10 +57,20 @@ public class CircularMotion : MonoBehaviour
             angularSpeed = Mathf.Clamp(angularSpeed, -maxAngularSpeed, maxAngularSpeed);
     }
 
-    private void MouseInput()
+    private void HandleMouseInput()
     {
-        float angleToMouse;
-        Vector3 mousePos = Input.mousePosition;
+        //Gets the mouse position in screen space, converts the screen space position to world position, and normalizes the vector
+        Vector3 mousePosition = Input.mousePosition;
+        Vector2 mouseWorldPosition = (Vector2) Camera.main.ScreenToWorldPoint(mousePosition);
+        mouseWorldPosition.Normalize();
+
+        //calculates the angle between the center and the mouse position in radians
+        //desiredAngle = Mathf.Acos(Vector2.Dot(mouseWorldPosition, center.right));
+        desiredAngle = Mathf.Atan2(mouseWorldPosition.y, mouseWorldPosition.x);
+        Debug.Log(desiredAngle);
+        
+
+        angle = Mathf.MoveTowards(angle, desiredAngle, 5f * Time.deltaTime);
     }
 
 }
