@@ -6,7 +6,7 @@ public class HealthComponent : MonoBehaviour
 {
     [SerializeField] int MaxHealth = 1;
     int health;
-    private void Start()
+    private void Awake()
     {
         health = MaxHealth;
     }
