@@ -473,6 +473,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1763608431626936426, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
+      propertyPath: lifeKeeper
+      value: 
+      objectReference: {fileID: 677579693}
     - target: {fileID: 3499893286491729536, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -522,6 +526,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
+--- !u!1 &522407733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6546074666127991043, guid: 109420e6df7b7a84e8ddb5b44be5e960, type: 3}
+  m_PrefabInstance: {fileID: 522407732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &677579693
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b464887b41a774edb973231588b83f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bitsy: {fileID: 0}
+  bitsy: {fileID: 522407733}
   livesText: {fileID: 677579696}
 --- !u!114 &677579696
 MonoBehaviour:
