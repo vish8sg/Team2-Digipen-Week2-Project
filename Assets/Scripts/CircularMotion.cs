@@ -10,6 +10,7 @@ public class CircularMotion : MonoBehaviour
     [SerializeField] Transform center = null;
     [SerializeField] float angularAcceleration = 10f;
     [SerializeField] float maxAngularSpeed = 50f;
+    [SerializeField] bool toggleMouseInput = false;
 
     float radius = 0f;
 
@@ -25,8 +26,12 @@ public class CircularMotion : MonoBehaviour
 
     private void Update()
     {
-        //HandleInput();
-        HandleMouseInput();
+        if (toggleMouseInput) { HandleInput(); }
+        else
+        {
+            HandleMouseInput();
+        }
+        ; 
 
         //angle += angularSpeed * Time.deltaTime;
 
