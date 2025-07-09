@@ -76,9 +76,10 @@ public class CircularMotion : MonoBehaviour
         //desiredAngle = Mathf.Acos(Vector2.Dot(mouseWorldPosition, center.right));
         desiredAngle = Mathf.Atan2(mouseWorldPosition.y, mouseWorldPosition.x);
         Debug.Log(desiredAngle);
-        
 
-        angle = Mathf.MoveTowards(angle, desiredAngle, 5f * Time.deltaTime);
+
+        //angle = Mathf.MoveTowards(angle, desiredAngle, 5f * Time.deltaTime);
+        angle = desiredAngle;
     }
 
 }
