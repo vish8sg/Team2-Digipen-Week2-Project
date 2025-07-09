@@ -26,12 +26,14 @@ public class CircularMotion : MonoBehaviour
 
     private void Update()
     {
-        if (toggleMouseInput) { HandleInput(); }
+        if (!toggleMouseInput) 
+        { 
+            HandleInput(); 
+        }
         else
         {
             HandleMouseInput();
         }
-        ; 
 
         //angle += angularSpeed * Time.deltaTime;
 
@@ -59,7 +61,8 @@ public class CircularMotion : MonoBehaviour
             angularSpeed = Mathf.MoveTowards(angularSpeed, 0f, angularAcceleration *  Time.deltaTime);
         }
 
-            angularSpeed = Mathf.Clamp(angularSpeed, -maxAngularSpeed, maxAngularSpeed);
+        angularSpeed = Mathf.Clamp(angularSpeed, -maxAngularSpeed, maxAngularSpeed);
+        angle += angularSpeed * Time.deltaTime;
     }
 
     private void HandleMouseInput()
