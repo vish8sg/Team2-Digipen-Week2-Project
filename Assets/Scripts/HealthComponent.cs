@@ -19,4 +19,9 @@ public class HealthComponent : MonoBehaviour
             GameObject.Destroy(gameObject);
         }
     }
+
+    public int GetLives()
+    {
+        return health;
+    }
 }
