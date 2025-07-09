@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 617428451}
   - component: {fileID: 617428453}
   - component: {fileID: 617428452}
+  - component: {fileID: 617428454}
   m_Layer: 5
   m_Name: Time Alive
   m_TagString: Untagged
@@ -641,6 +642,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617428450}
   m_CullTransparentMesh: 1
+--- !u!114 &617428454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 617428450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b96334c20f88473eaf051de4071e778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timekeeper: {fileID: 0}
+  timeAliveText: {fileID: 0}
 --- !u!1 &1119926130
 GameObject:
   m_ObjectHideFlags: 0
