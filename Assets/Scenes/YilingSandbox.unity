@@ -303,8 +303,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeKeeper: {fileID: 495495715}
   spawner: {fileID: 708302423}
-  timeThresholds: []
-  spawnRates: []
+  timeThresholds:
+  - 0
+  - 10
+  - 20
+  - 30
+  spawnRates:
+  - 3
+  - 2
+  - 1
+  - 0.5
 --- !u!4 &405602701
 Transform:
   m_ObjectHideFlags: 0
