@@ -6,63 +6,12 @@ using UnityEngine.UIElements;
 
 public class CircularMotion : MonoBehaviour
 {
-
-    [SerializeField] Transform center = null;
-    [SerializeField] float angularAcceleration = 10f;
-    [SerializeField] float maxAngularSpeed = 50f;
-    [SerializeField] bool toggleMouseInput = false;
-
-    float radius = 0f;
-
-    float angularSpeed = 0f;
-    float angle = 0f;
-    float desiredAngle = 0f;
-
-    private void Start()
-    {
-        if (center == null) { return; }
-        radius = Vector3.Distance(center.position, transform.position);
-    }
+    [Tooltip("Turn Speed in Degrees Per Second")]
+    [SerializeField] float turnSpeed = 150f;
 
     private void Update()
     {
-        if (!toggleMouseInput) 
-        { 
-            HandleInput(); 
-        }
-        else
-        {
-            HandleMouseInput();
-        }
-
-        //angle += angularSpeed * Time.deltaTime;
-
-
-        //Calculate new positon on circle
-        Vector2 offset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
-        transform.position = (Vector2) center.position + offset;
-
-        //Rotate to face tangent direction - (rotations are complicated so used chatgpt)
-        Vector2 tangent = new Vector2(-Mathf.Sin(angle), Mathf.Cos(angle)) * Mathf.Sign(angularSpeed);
-        float angleDeg = Mathf.Atan2(tangent.y, tangent.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, angleDeg);
-    }
-
-    private void HandleInput()
-    {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            angularSpeed -= angularAcceleration * Time.deltaTime;
-        } else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            angularSpeed += angularAcceleration * Time.deltaTime;
-        } else
-        {
-            angularSpeed = Mathf.MoveTowards(angularSpeed, 0f, angularAcceleration *  Time.deltaTime);
-        }
-
-        angularSpeed = Mathf.Clamp(angularSpeed, -maxAngularSpeed, maxAngularSpeed);
-        angle += angularSpeed * Time.deltaTime;
+        HandleMouseInput();
     }
 
     private void HandleMouseInput()
@@ -71,15 +20,27 @@ public class CircularMotion : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         Vector2 mouseWorldPosition = (Vector2) Camera.main.ScreenToWorldPoint(mousePosition);
         mouseWorldPosition.Normalize();
+        Vector2 rightVector = -transform.right;
 
-        //calculates the angle between the center and the mouse position in radians
-        //desiredAngle = Mathf.Acos(Vector2.Dot(mouseWorldPosition, center.right));
-        desiredAngle = Mathf.Atan2(mouseWorldPosition.y, mouseWorldPosition.x);
-        Debug.Log(desiredAngle);
+        float dot = Vector2.Dot(rightVector, mouseWorldPosition);
+        Debug.DrawLine(transform.position, mouseWorldPosition, Color.red);
+        Debug.DrawLine(transform.position, rightVector, Color.blue);
 
+        //Compute rotation this frame
+        float rotationThisFrame = 0f;
+        if (dot < 0f)
+        {
+            rotationThisFrame = -turnSpeed * Time.deltaTime;
+        }
+        else if (dot > 0f)
+        {
+            rotationThisFrame = turnSpeed * Time.deltaTime;
+        }
 
-        //angle = Mathf.MoveTowards(angle, desiredAngle, 5f * Time.deltaTime);
-        angle = desiredAngle;
+        //Uses the rotation that we computed and applies it to the transform
+        Quaternion rotator = Quaternion.AngleAxis(rotationThisFrame, Vector3.forward);
+        transform.rotation = transform.rotation * rotator;
     }
+
 
 }
