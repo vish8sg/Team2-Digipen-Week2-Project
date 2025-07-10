@@ -412,9 +412,9 @@ MonoBehaviour:
   - 30
   spawnRates:
   - 3
-  - 2
-  - 1
+  - 1.5
   - 0.5
+  - 0.3
 --- !u!4 &405602701
 Transform:
   m_ObjectHideFlags: 0
@@ -962,7 +962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac03db0000fdf144d912089de23349d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1
   enemyPrefabs:
   - {fileID: 4672845351051639279, guid: 627657e03e742e24dbf8b1cd537fd7e9, type: 3}
   launchForce: 10
