@@ -5,9 +5,10 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [Tooltip("Interval at which enemies start spawning at in seconds")]
-    [SerializeField] float spawnRate = 1f;
     [SerializeField] private GameObject[] enemyPrefabs = null;
     [SerializeField] float launchForce = 10f;
+
+    float spawnRate = 1f;
 
     private bool canSpawn = true;
 
@@ -22,7 +23,7 @@ public class Spawner : MonoBehaviour
 
         while (canSpawn)
         {
-            yield return wait;
+            yield return new WaitForSeconds(spawnRate);
 
             int randomEnemyIndex = Random.Range(0, 1);
             GameObject projectile = Instantiate(enemyPrefabs[randomEnemyIndex], GetRandomScreenEdgePosition(), Quaternion.identity);

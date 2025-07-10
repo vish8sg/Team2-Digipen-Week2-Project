@@ -13,9 +13,6 @@ public class DifficultyScaler : MonoBehaviour
     [Tooltip("Changes to spawn rate (interval in seconds) linked to the different time thresholds")]
     [SerializeField] float[] spawnRates = null;
 
-    Spawner spawn = null;
-    Timekeeper timer = null;
-
     //stores the index of the current difficulty threshold
     int currentIndex = 0;
 
@@ -23,25 +20,23 @@ public class DifficultyScaler : MonoBehaviour
     void Start()
     {
         if (timeKeeper == null || spawner == null) { return; } 
-        spawn = spawner.GetComponent<Spawner>();
-        timer = timeKeeper.GetComponent<Timekeeper>();
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateDifficulty();
-        Debug.Log(spawn.GetSpawnRate());
+        //Debug.Log(spawner.GetComponent<Spawner>().GetSpawnRate());
     }
 
     private void UpdateDifficulty()
     {
         if (currentIndex < timeThresholds.Length-1)
         {
-            if (timeThresholds[currentIndex] < timer.getFloatTime())
+            if (timeThresholds[currentIndex] < timeKeeper.GetComponent<Timekeeper>().getFloatTime())
             {
                 currentIndex++;
-                spawn.SetSpawnRate(spawnRates[currentIndex]);
+                spawner.GetComponent<Spawner>().SetSpawnRate(spawnRates[currentIndex]);
             }
         }
     }
