@@ -20,7 +20,7 @@ public class Bitsy : MonoBehaviour
         if (lifeKeeper == null || sceneLoader == null) { return; }
         healthComponent = GetComponent<HealthComponent>();
         lifeKeeper.GetComponent<LifeKeeper>().updateLife(healthComponent.GetLives());
-    } 
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "BadProjectile")
@@ -31,7 +31,7 @@ public class Bitsy : MonoBehaviour
             StartCoroutine(BecomeTemporarilyInvincible());
 
             //restarts game if bitsy's lives goes to zero
-            if (healthComponent.GetLives() <=0 )
+            if (healthComponent.GetLives() <= 0)
             {
                 sceneLoader.GetComponent<SceneLoader>().LoadScene(0);
             }
