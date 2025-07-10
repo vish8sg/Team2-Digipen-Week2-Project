@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a006b314167eb48b98777db2c037d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 150
+  turnSpeed: 240
 --- !u!1 &377641066
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeKeeper: {fileID: 495495715}
   spawner: {fileID: 708302423}
-  speedUpRate: 0.01
+  timeThresholds: []
+  spawnRates: []
 --- !u!4 &405602701
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,11 +1676,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6516451684346746884, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 6516451684346746884, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.31
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 6516451684346746884, guid: 9a5895d065b784c6dbfea8145c8a5452, type: 3}
       propertyPath: m_LocalPosition.z
