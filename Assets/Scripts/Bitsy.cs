@@ -45,7 +45,8 @@ public class Bitsy : MonoBehaviour
         for (float i = 0; i < invulnerabiltyWindow; i += invulnerabilityDeltaTime)
         {
             // TODO: add any logic we want here
-            GetComponent<SpriteRenderer>().color = Color.red;
+            Color invulnerableRed = new Color(1f, 0.5f, 0.5f);
+            GetComponent<SpriteRenderer>().color = invulnerableRed;
             yield return new WaitForSeconds(invulnerabilityDeltaTime/2);
             GetComponent<SpriteRenderer>().color = Color.white;
             yield return new WaitForSeconds(invulnerabilityDeltaTime / 2);
