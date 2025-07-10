@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a006b314167eb48b98777db2c037d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 150
+  turnSpeed: 360
 --- !u!1 &377641066
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +303,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeKeeper: {fileID: 495495715}
   spawner: {fileID: 708302423}
-  speedUpRate: 0.01
+  timeThresholds:
+  - 0
+  - 10
+  - 20
+  - 30
+  spawnRates:
+  - 3
+  - 2
+  - 1
+  - 0.5
 --- !u!4 &405602701
 Transform:
   m_ObjectHideFlags: 0
