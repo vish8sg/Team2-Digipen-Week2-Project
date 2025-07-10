@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [Tooltip("Interval at which enemies start spawning at in seconds")]
     [SerializeField] float spawnRate = 1f;
     [SerializeField] private GameObject[] enemyPrefabs = null;
     [SerializeField] float launchForce = 10f;
@@ -71,6 +72,16 @@ public class Spawner : MonoBehaviour
         worldPoint.z = 0f;
 
         return worldPoint;
+    }
+
+    public void SetSpawnRate(float rate)
+    {
+        spawnRate = rate;
+    }
+    
+    public float GetSpawnRate()
+    {
+        return spawnRate;
     }
 
 }

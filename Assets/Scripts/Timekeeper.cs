@@ -61,4 +61,9 @@ public class Timekeeper : MonoBehaviour
     {
         return timeString;
     }
+
+    public float getFloatTime()
+    {
+        return time;
+    }
 }
