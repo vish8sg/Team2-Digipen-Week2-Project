@@ -26,7 +26,7 @@ public class DifficultyScaler : MonoBehaviour
     void Update()
     {
         UpdateDifficulty();
-        //Debug.Log(spawner.GetComponent<Spawner>().GetSpawnRate());
+        Debug.Log(spawner.GetComponent<Spawner>().GetSpawnRate());
     }
 
     private void UpdateDifficulty()
@@ -35,8 +35,8 @@ public class DifficultyScaler : MonoBehaviour
         {
             if (timeThresholds[currentIndex] < timeKeeper.GetComponent<Timekeeper>().getFloatTime())
             {
-                currentIndex++;
                 spawner.GetComponent<Spawner>().SetSpawnRate(spawnRates[currentIndex]);
+                currentIndex++;
             }
         }
     }
