@@ -28,6 +28,7 @@ public class Bitsy : MonoBehaviour
             if (isInvulnerable) { return; }
             GetComponent<HealthComponent>().decreaseHealth();
             lifeKeeper.GetComponent<LifeKeeper>().updateLife(healthComponent.GetLives());
+            if (Camera.main.GetComponent<CameraShake>() != null) { CameraShake.Shake(0.05f, 0.5f); }
             StartCoroutine(BecomeTemporarilyInvincible());
 
             //restarts game if bitsy's lives goes to zero
