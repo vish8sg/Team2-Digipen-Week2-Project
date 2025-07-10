@@ -26,7 +26,6 @@ public class DifficultyScaler : MonoBehaviour
     void Update()
     {
         UpdateDifficulty();
-        Debug.Log(spawner.GetComponent<Spawner>().GetSpawnRate());
     }
 
     private void UpdateDifficulty()

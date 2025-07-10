@@ -20,6 +20,12 @@ public class HealthComponent : MonoBehaviour
         }
     }
 
+    public void increaseHealth()
+    {
+        health++;
+        health = Mathf.Clamp(health, 0, MaxHealth);
+    }
+
     public int GetLives()
     {
         return health;
