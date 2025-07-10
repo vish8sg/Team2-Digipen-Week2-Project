@@ -31,8 +31,7 @@ public class DifficultyScaler : MonoBehaviour
     void Update()
     {
         UpdateDifficulty();
-        //Debug.Log(spawn.GetSpawnRate());
-        Debug.Log(currentIndex);
+        Debug.Log(spawn.GetSpawnRate());
     }
 
     private void UpdateDifficulty()
