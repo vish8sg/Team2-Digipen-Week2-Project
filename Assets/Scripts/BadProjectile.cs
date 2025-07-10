@@ -8,6 +8,11 @@ public class BadProjectile : MonoBehaviour
     {
         if (other.tag == "Paddle" || other.tag == "Bitsy")
         {
+            CameraShake.Shake(0.1f, 1f);
+            GetComponent<HealthComponent>().decreaseHealth();
+        }
+        if (other.tag == "Bitsy")
+        {
             GetComponent<HealthComponent>().decreaseHealth();
         }
     }
