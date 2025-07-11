@@ -6,7 +6,8 @@ public class Bitsy : MonoBehaviour
 {
     [SerializeField] GameObject lifeKeeper = null;
     [SerializeField] GameObject sceneLoader = null;
-
+    [Tooltip("Hit stop in seconds when bitsy collides with projectile")]
+    [SerializeField] float hitStop = 0.1f;
     [Tooltip("Time in seconds which Bisty will be invulnerable after getting hit")]
     [SerializeField] float invulnerabiltyWindow = 1f;
     [Tooltip("Time between invulnerability ticks")]
@@ -28,6 +29,7 @@ public class Bitsy : MonoBehaviour
             if (isInvulnerable) { return; }
             GetComponent<HealthComponent>().decreaseHealth();
             lifeKeeper.GetComponent<LifeKeeper>().updateLife(healthComponent.GetLives());
+            TimeFreezer.FreezeTime(hitStop);
             StartCoroutine(BecomeTemporarilyInvincible());
 
             //restarts game if bitsy's lives goes to zero

@@ -15,6 +15,7 @@ public class Paddle : MonoBehaviour
         if (other.tag == "BadProjectile")
         {
             TimeFreezer.FreezeTime(hitStop);
+            ScoreKeeper.IncreaseScore();
             GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.red, tomatoSplotchAmount);
         }
     }

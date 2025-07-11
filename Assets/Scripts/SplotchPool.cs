@@ -58,7 +58,7 @@ public class SplotchPool : MonoBehaviour
         // Set position (Z = 0 for 2D), random rotation, and random scale
         splotch.transform.position = new Vector3(position.x, position.y, 0f);
         splotch.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-        splotch.transform.localScale *= Random.Range(0.9f, 1.1f);
+        splotch.transform.localScale *= Random.Range(0.85f, 1.15f);
 
         splotch.SetActive(true);
 
