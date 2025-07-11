@@ -28,17 +28,18 @@ public class CircularMotion : MonoBehaviour
 
         //Compute rotation this frame
         float rotationThisFrame = 0f;
-        if (dot < 0f)
+        if (dot < -0.001f)
         {
             rotationThisFrame = -turnSpeed * Time.deltaTime;
         }
-        else if (dot > 0f)
+        else if (dot > 0.001f)
         {
             rotationThisFrame = turnSpeed * Time.deltaTime;
         }
+        else { rotationThisFrame = 0; }
 
-        //Uses the rotation that we computed and applies it to the transform
-        Quaternion rotator = Quaternion.AngleAxis(rotationThisFrame, Vector3.forward);
+            //Uses the rotation that we computed and applies it to the transform
+            Quaternion rotator = Quaternion.AngleAxis(rotationThisFrame, Vector3.forward);
         transform.rotation = transform.rotation * rotator;
     }
 

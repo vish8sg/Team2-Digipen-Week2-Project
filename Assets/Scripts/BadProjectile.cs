@@ -6,10 +6,9 @@ public class BadProjectile : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Paddle")
-        {
-            if (Camera.main.GetComponent<CameraShake>() != null) { CameraShake.Shake(0.05f, 0.25f); }
+        if (other.tag == "Paddle" || other.tag == "Bitsy")
+        { 
+            GetComponent<HealthComponent>().decreaseHealth();
         }
-        GetComponent<HealthComponent>().decreaseHealth();
     }
 }
