@@ -27,6 +27,9 @@ public class Timekeeper : MonoBehaviour
         {
             //increase time
             time += Time.deltaTime;
+            
+            //Pass time to ScoreKeeper
+            ScoreKeeper.SetTime(time);
 
             //sets up TimeSpan object (for formatting)
             timeSpan = TimeSpan.FromSeconds(time);
