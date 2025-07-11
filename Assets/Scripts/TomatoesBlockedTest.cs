@@ -10,7 +10,7 @@ public class TomatoesBlockedTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Tomatoes Blocked: " + ScoreKeeper.GetScore();
+        scoreText.text = ScoreKeeper.GetScore().ToString();
         ScoreKeeper.ResetScore();
     }
 }
