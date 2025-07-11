@@ -185,3 +185,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f833b311feb44d409dbc5ab69ea5bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splotchPrefab: {fileID: 1712708689868904293, guid: 97b250f4b87b3704aa528de2cd15633c, type: 3}
