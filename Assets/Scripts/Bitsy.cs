@@ -30,6 +30,7 @@ public class Bitsy : MonoBehaviour
             GetComponent<HealthComponent>().decreaseHealth();
             lifeKeeper.GetComponent<LifeKeeper>().updateLife(healthComponent.GetLives());
             TimeFreezer.FreezeTime(hitStop);
+            if (Camera.main.GetComponent<CameraShake>() != null) { CameraShake.Shake(0.15f, 0.2f); }
             StartCoroutine(BecomeTemporarilyInvincible());
 
             //restarts game if bitsy's lives goes to zero
