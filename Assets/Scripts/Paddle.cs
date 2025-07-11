@@ -15,6 +15,7 @@ public class Paddle : MonoBehaviour
         if (other.tag == "BadProjectile")
         {
             TimeFreezer.FreezeTime(hitStop);
+            if (Camera.main.GetComponent<CameraShake>()  != null) { CameraShake.Shake(0.1f, 0.1f); }
             ScoreKeeper.IncreaseScore();
             GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, Color.red, tomatoSplotchAmount);
         }
