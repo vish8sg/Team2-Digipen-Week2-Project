@@ -26,20 +26,19 @@ public class CircularMotion : MonoBehaviour
         Debug.DrawLine(transform.position, mouseWorldPosition, Color.red);
         Debug.DrawLine(transform.position, rightVector, Color.blue);
 
-        //Compute rotation this frame
+        //Compute rotation this frame - Added A small Margin of Imprecision to stop the jitter (won't try to seek perfect angle if "close enough")
         float rotationThisFrame = 0f;
-        if (dot < -0.001f)
+        if (dot < -0.05f)
         {
             rotationThisFrame = -turnSpeed * Time.deltaTime;
         }
-        else if (dot > 0.001f)
+        else if (dot > 0.05f)
         {
             rotationThisFrame = turnSpeed * Time.deltaTime;
         }
-        else { rotationThisFrame = 0; }
 
-            //Uses the rotation that we computed and applies it to the transform
-            Quaternion rotator = Quaternion.AngleAxis(rotationThisFrame, Vector3.forward);
+        //Uses the rotation that we computed and applies it to the transform
+        Quaternion rotator = Quaternion.AngleAxis(rotationThisFrame, Vector3.forward);
         transform.rotation = transform.rotation * rotator;
     }
 
