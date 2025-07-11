@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YilingSandbox.unity
     guid: 80a95eb992a4d42d588b2104b70245cc
+  - enabled: 1
+    path: Assets/Scenes/YilingEndScreen.unity
+    guid: 736673d89ccd44a78a54dae2a8b561a8
   m_configObjects: {}
