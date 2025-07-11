@@ -34,6 +34,7 @@ public class ScoreKeeper : MonoBehaviour
     }
 
     private int score = 0;
+    private float time = 0;
 
     private void Awake()
     {
@@ -63,18 +64,50 @@ public class ScoreKeeper : MonoBehaviour
         return score;
     }
 
+    private void setTime(float seconds)
+    {
+        time = seconds;
+    }
+
+    private float getTime()
+    {
+        return time;
+    }
+
+    private void resetTime()
+    {
+        time = 0;
+    }
+
     public static void IncreaseScore()
     {
         Instance.DoScoreIncrease();
     }
 
-    public static void GetScore()
+    public static int GetScore()
     {
-        Instance.getScore();
+        return Instance.getScore();
     }
 
     public static void ResetScore()
     {
         Instance.resetScore();
     }
+
+    public static void SetTime(float seconds)
+    {
+        Instance.setTime(seconds);
+    }
+
+    public static float GetTime()
+    {
+        return Instance.getTime();
+    }
+
+    public static void ResetTime()
+    {
+        Instance.resetTime();
+    }
+
+    
 }
