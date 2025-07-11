@@ -16,4 +16,6 @@ public class ScoreText : MonoBehaviour
     {
         scoreText.text = "Score: " + ScoreKeeper.GetScore();
     }
+
+
 }
