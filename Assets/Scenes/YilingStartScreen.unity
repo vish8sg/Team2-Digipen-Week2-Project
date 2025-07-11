@@ -1772,9 +1772,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\n\n\nLead Programmer: Vishnu\nLead Artist: Wayde\nDesigners: Yiling &
-    B\xFClari\nCreative Director: Wayde\nProducer: Yiling\nGameplay Music & SFX:
-    Braedon\n\nIntro Music: GWriterStudio (from Unity Asset Store)\nButton Click
-    SFX: SwishSwoosh (from Unity Asset Store)"
+    B\xFClari\nCreative Director: Wayde\nProducer: Yiling\nMusic & SFX: Braedon\n\nButton
+    Click SFX: SwishSwoosh (from Unity Asset Store)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
