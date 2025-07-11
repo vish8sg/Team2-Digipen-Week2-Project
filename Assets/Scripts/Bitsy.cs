@@ -35,7 +35,7 @@ public class Bitsy : MonoBehaviour
             //restarts game if bitsy's lives goes to zero
             if (healthComponent.GetLives() <= 0)
             {
-                sceneLoader.GetComponent<SceneLoader>().LoadScene(0);
+                sceneLoader.GetComponent<SceneLoader>().LoadScene(2);
             }
         }
     }
