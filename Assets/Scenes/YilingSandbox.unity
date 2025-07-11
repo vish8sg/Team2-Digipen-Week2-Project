@@ -817,6 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff8b9f175a92814b84b6455fe395857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetFR: 60
 --- !u!1001 &522407732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6724,7 +6725,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.01, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1646683266}
