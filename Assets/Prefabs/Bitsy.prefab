@@ -158,3 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeKeeper: {fileID: 0}
+  sceneLoader: {fileID: 0}
+  invulnerabiltyWindow: 1
+  invulnerabilityDeltaTime: 0.15
