@@ -3,33 +3,58 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// Singleton Script for tracking score
+/// </summary>
 public class ScoreKeeper : MonoBehaviour
 {
-    public static ScoreKeeper instance;
+    public static ScoreKeeper _instance;
+
+    public static ScoreKeeper Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                // Try to find an existing instance
+                _instance = FindObjectOfType<ScoreKeeper>();
+
+                if (_instance == null)
+                {
+                    // Create new GameObject with TimeFreezer
+                    GameObject go = new GameObject("TimeFreezer");
+                    _instance = go.AddComponent<ScoreKeeper>();
+
+                    // Optional: Prevent from being destroyed on scene load
+                    DontDestroyOnLoad(go);
+                }
+            }
+            return _instance;
+        }
+    }
 
     private int score = 0;
 
-    [SerializeField] TMP_Text scoreText = null;
-
     private void Awake()
     {
-        instance = this;
-    }
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    private void Start()
-    {
-        scoreText.text = "Score: " + score;
+        _instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void DoScoreIncrease()
     {
         score++;
         Debug.Log(score);
-        scoreText.text = "Score: " + score;
     }
 
     public static void IncreaseScore()
     {
-        instance.DoScoreIncrease();
+        Instance.DoScoreIncrease();
     }
 }
