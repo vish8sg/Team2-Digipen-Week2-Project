@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class ScoreKeeper : MonoBehaviour
 {
-    public static ScoreKeeper _instance;
+    private static ScoreKeeper _instance;
 
     public static ScoreKeeper Instance
     {
@@ -53,8 +53,28 @@ public class ScoreKeeper : MonoBehaviour
         Debug.Log(score);
     }
 
+    private void resetScore()
+    {
+        score = 0;
+    }
+
+    private int getScore()
+    {
+        return score;
+    }
+
     public static void IncreaseScore()
     {
         Instance.DoScoreIncrease();
+    }
+
+    public static void GetScore()
+    {
+        Instance.getScore();
+    }
+
+    public static void ResetScore()
+    {
+        Instance.resetScore();
     }
 }
